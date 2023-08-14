@@ -13,14 +13,17 @@ const images = [
   },
 ];
 
-
 const ulGallery = document.querySelector("ul.gallery");
-ulGallery.style.display = "flex";
-ulGallery.style.listStyle = "none";
- const markup = images
-  .map((image) => `<li><img width="300" height="200" src="${image.url}" alt="${image.alt}"></img></li>`);
+const markup = images
+  .map((image) => `<li><img width="300" height="200" src="${image.url}" alt="${image.alt}"></img></li>`)
+  .join('');
 
 ulGallery.insertAdjacentHTML(
   "beforeend",
   markup
 );
+
+ulGallery.style.display = "flex";
+ulGallery.style.listStyle = "none";
+ulGallery.style.gap = '10px';
+ulGallery.style.justifyContent = 'center';
